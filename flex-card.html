@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Card</title>
+    <style>
+      .card {
+        width: 300px;
+        border: 1px solid lightgray;
+        box-shadow: 4px 5px 9px -1px rgba(0, 0, 0, 0.65);
+        /* imposto display: flex in modo che quando .card-content dovrà prendere
+        una height al 100% non vada a fare un calcolo errato */
+        display: flex;
+        flex-direction: column;
+        /* margin-right: 15px; */
+      }
+
+      .card img {
+        width: 100%;
+      }
+
+      .card-content {
+        padding: 0 20px;
+        height: 100%;
+        /* questo display: flex serve per impostare il justify-content, in 
+        modo da trovare l'omogeneità dei contenuti a prescindere dalla quantità
+        di testo contenuta e di conseguenza dall'altezza della card */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .card-content h3 {
+        text-align: center;
+      }
+
+      .card-content button {
+        color: white;
+        background-color: grey;
+        border: 0;
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 10px;
+      }
+
+      main {
+        /* impostiamo display: flex per allineare orizzontalmente tutte le card,
+        e flex-wrap manderà a capo le card che non entrano fisicamente nel viewport */
+        display: flex;
+        /* flex-wrap: wrap; */
+        flex-flow: row wrap; /* alternativa */
+        justify-content: center;
+        gap: 30px;
+      }
+
+      @media screen and (min-width: 600px) {
+        main {
+          /* su desktop facciamo partire le cards dal bordo sx */
+          justify-content: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="cards">
+      <article class="card">
+        <img src="https://placekitten.com/300" alt="kitten picture" />
+        <div class="card-content">
+          <h3>Lorem ipsum</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            inventore cumque eligendi.
+          </p>
+          <button>Go home</button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://placekitten.com/300" alt="kitten picture" />
+        <div class="card-content">
+          <h3>Lorem ipsum</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil ut,
+            delectus repellat possimus hic accusantium officiis commodi qui vel
+            dicta ipsam aspernatur nostrum, totam dolore dolorum exercitationem
+            optio explicabo quisquam!
+          </p>
+          <button>Go home</button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://placekitten.com/300" alt="kitten picture" />
+        <div class="card-content">
+          <h3>Lorem ipsum</h3>
+          <p>Lorem</p>
+          <button>Go home</button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://placekitten.com/300" alt="kitten picture" />
+        <div class="card-content">
+          <h3>Lorem ipsum</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil ut,
+            delectus repellat possimus hic accusantium officiis commodi qui vel
+            dicta ipsam aspernatur nostrum, totam dolore dolorum exercitationem
+            optio explicabo quisquam! Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Nihil ut, delectus repellat possimus hic
+            accusantium officiis commodi qui vel dicta ipsam aspernatur nostrum,
+            totam dolore dolorum exercitationem optio explicabo quisquam!
+          </p>
+          <button>Go home</button>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://placekitten.com/300" alt="kitten picture" />
+        <div class="card-content">
+          <h3>Lorem ipsum</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button>Go home</button>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

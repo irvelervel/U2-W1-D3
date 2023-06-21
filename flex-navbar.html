@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Navbar</title>
+    <style>
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
+      nav {
+        background-color: orangered;
+        color: white;
+        /* proprietà flex per la navbar da mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0;
+      }
+
+      form {
+        margin-top: 1em;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+        /* metto display flex con column anche se all'apparenza non cambia niente */
+        /* per permettermi successivamente nella media query desktop di cambiarne
+        l'orientamento solamente invertendo la flex-direction */
+        display: flex;
+        flex-direction: column;
+      }
+
+      ul li {
+        margin: 0.2em 0;
+      }
+
+      button {
+        border: 0;
+        border-radius: 1em;
+        color: orangered;
+        background-color: white;
+        padding: 0.2em 1em;
+      }
+
+      @media screen and (min-width: 600px) {
+        nav {
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 1em 1em;
+        }
+
+        ul {
+          flex-direction: row;
+        }
+
+        ul li {
+          margin-right: 0.5em;
+        }
+
+        form {
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Logo</li>
+        <li>Home</li>
+        <li>Products</li>
+        <li>Service</li>
+      </ul>
+      <form>
+        <input type="search" placeholder="Search" />
+        <button>Go</button>
+      </form>
+    </nav>
+  </body>
+</html>
